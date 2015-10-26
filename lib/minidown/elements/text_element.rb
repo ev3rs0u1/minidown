@@ -134,8 +134,8 @@ module Minidown
 
       #convert image syntax
       str.gsub! Regexp[:image] do
-        $1 = 'null' if $1.empty?
         alt, url = $1, $2
+        alt = 'null' if $1.empty?
         url =~ Regexp[:link_title]
         title = $1
         url =~ Regexp[:link_url]
