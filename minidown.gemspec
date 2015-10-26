@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jjyruby@gmail.com"]
   spec.description   = %q{Minidown is a lightweight & fast markdown parser, with complete GFM support.}
   spec.summary       = %q{Minidown is a lightweight & fast markdown parser, with complete GFM support.}
-  spec.homepage      = "https://github.com/jjyr/minidown"
+  spec.homepage      = "https://github.com/ev3rs0u1/minidown"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
