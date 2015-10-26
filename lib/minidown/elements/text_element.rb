@@ -10,7 +10,7 @@ module Minidown
       link_title: /((?<=").+?(?="))/,
       link_url: /(\S+)/,
       link_ref: /(?<!\!)\[(.+?)\]\s*\[(.*?)\]/,
-      image: /\!\[(.+?)\]\((.+?)\)/,
+      image: /!\\[.*\\]\\((.+)\\)/,
       image_ref: /\!\[(.+?)\]\s*\[(.*?)\]/,
       star: /((?<!\\)\*{1,2})(.+?)\1/,
       underline: /(?<=\A|\s)((?<!\\)\_{1,2})(\S+)\1(?=\z|\s)/,
@@ -135,7 +135,6 @@ module Minidown
       #convert image syntax
       str.gsub! Regexp[:image] do
         alt, url = $1, $2
-        alt = 'null' if $1.empty?
         url =~ Regexp[:link_title]
         title = $1
         url =~ Regexp[:link_url]
